@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Broucetrong/blog.git/"/>
-  <updated>2017-09-10T12:30:18.804Z</updated>
+  <updated>2017-09-10T12:48:01.725Z</updated>
   <id>https://github.com/Broucetrong/blog.git/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IDEA快捷键</title>
+    <link href="https://github.com/Broucetrong/blog.git/2017/09/10/IDEA-hot-key/"/>
+    <id>https://github.com/Broucetrong/blog.git/2017/09/10/IDEA-hot-key/</id>
+    <published>2017-09-10T12:46:19.743Z</published>
+    <updated>2017-09-10T12:48:01.725Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<ul>
+<li>Ctrl + Alt + H ：调用树</li>
+<li>选中错误 ，Alt + Enter ：自动提示错误解决方法</li>
+<li>选中类/方法/变量 ， Alt + F7 ： 查看所有引用该类/方法/变量的位置</li>
+<li>选中方法 ， Ctrl + Alt + B ：查看方法（或者Ctrl + Alt + 左键）</li>
+<li>Alt + Insert ： 添加构造类或者getter/setter</li>
+<li>双击 Shift ：在项目中全局搜索</li>
+<li>Ctrl + Shift + N : 搜索所有文件</li>
+<li>Ctrl + N : 搜索类</li>
+<li>Shift + F6 ： 重命名类/方法/变量</li>
+<li>Ctrl + R ： 当前文件内替换</li>
+<li>Ctrl + Shift + R ： 当前项目内替换</li>
+<li>Ctrl + F12 ： 显示浮动的OutLine</li>
+<li>Ctrl + X ： 剪切当前行</li>
+<li>Shift + F9 ： debug Tomcat</li>
+<li>Alt + ↑ / ↓ ： 上 / 下一个方法</li>
+<li>Ctrl + Alt +  ← / → ：返回上次编辑的位置</li>
+<li>F2 ：跳到下一处错误</li>
+<li>F3 ：跳到下一处查找的内容</li>
+<li>Ctrl + G : 跳到指定行</li>
+<li>Shift + Enter : 在光标所在行下起一空行</li>
+<li>Ctrl + Shift + Enter : 自动补全)、}、;等！</li>
+<li>Ctrl + Alt + T : 将选中代码surrond</li>
+<li>Ctrl + O : 重写方法</li>
+<li>Ctrl + Shift + U : 大小写转化</li>
+<li>Ctrl + Shift + J : 整合两行为一行</li>
+<li>Ctrl + P ：方法参数提示</li>
+<li>Ctrl + Q ：光标所在方法的声明</li>
+<li>Ctrl + Shift + Backspace : 上次编辑的地方</li>
+<li>Ctrl + Backspace ：删除一段内容</li>
+<li>Alt + 7 : 显示当前文件的结构</li>
+<li>F4 ： 查找变量来源（Ctrl + 左键）</li>
+<li>Alt + F1 ：在工程目录中定位当前文件所在位置</li>
+<li>Ctrl + ~ : 快速切换方案。最典型的就是：提交当前文件</li>
+<li>Ctrl + Shift + F8 ：查看断点</li>
+<li>Ctrl + { ：跳到当前代码块的左边界（左括号位置）</li>
+<li>Ctrl + } ：跳到当前代码块的右边界（右括号位置）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="IDEA" scheme="https://github.com/Broucetrong/blog.git/tags/IDEA/"/>
+    
+      <category term="工具" scheme="https://github.com/Broucetrong/blog.git/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>岳阳楼记 - 范仲淹</title>
