@@ -5,9 +5,8 @@
     <entry>
       <title><![CDATA[EasyUI - 对 Datagrid 数据表格的操作]]></title>
       <url>/2017/09/11/easyui-datagrid-operate/</url>
-      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//根据rowData获得rowIndex</div><div class="line">var rowIndex = $(&quot;#demo_datagrid&quot;).datagrid(&quot;getRowIndex&quot;, rowData);</div><div class="line">---------------------------------------------------------------</div><div class="line">//根据rowIndex获得rowData</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;unselectAll&apos;);</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;selectRow&apos;, rowIndex);</div><div class="line">var rowData = $(&apos;#datagrid_id&apos;).datagrid(&apos;getSelected&apos;);</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;unselectRow&apos;, rowIndex);</div><div class="line">---------------------------------------------------------------</div><div class="line">// 刷新索引行，在行数据修改后</div><div class="line">$(&apos;#demo_datagrid&apos;).datagrid(&apos;refreshRow&apos;, rowIndex);</div><div class="line">---------------------------------------------------------------</div><div class="line">//新增行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;appendRow&apos;, &#123;&#125;);</div><div class="line">//获取新增行</div><div class="line">rowIndex = $(&apos;#datagrid_id&apos;).datagrid(&apos;getRows&apos;).length - 1;</div><div class="line">---------------------------------------------------------------</div><div class="line">//编辑索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;selectRow&apos;, rowIndex)</div><div class="line">    .datagrid(&apos;beginEdit&apos;, rowIndex);</div><div class="line">//退出编辑索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;endEdit&apos;, rowIndex);</div><div class="line">//删除索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;cancelEdit&apos;, rowIndex)</div><div class="line">    .datagrid(&apos;deleteRow&apos;, rowIndex);</div><div class="line">//保存修改</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;acceptChanges&apos;);</div><div class="line">---------------------------------------------------------------</div><div class="line">//校验正在编辑的索引行</div><div class="line">var result = $(&apos;#datagrid_id&apos;).datagrid(&apos;validateRow&apos;, rowIndex);</div><div class="line">//执行form的校验</div><div class="line">var result = $(&apos;#column_form&apos;).form(&apos;validate&apos;);</div><div class="line">---------------------------------------------------------------</div><div class="line">//获得索引行的编辑器</div><div class="line">var editor = $(&apos;#datagrid_id&apos;).datagrid(&apos;getEditor&apos;, &#123;</div><div class="line">    index: rowIndex,</div><div class="line">    field: &apos;tableName&apos;</div><div class="line">&#125;);</div><div class="line">//设定“表名”不可修改</div><div class="line">$(editor.target).combobox(&#123;</div><div class="line">    readonly: true</div><div class="line">&#125;);</div></pre></td></tr></table></figure></the></p>
-]]></content>
+      <content type="html"><![CDATA[<h4 id="EasyUI-中对datagrid进行操作的常用语句："><a href="#EasyUI-中对datagrid进行操作的常用语句：" class="headerlink" title="EasyUI 中对datagrid进行操作的常用语句："></a>EasyUI 中对datagrid进行操作的常用语句：</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//根据rowData获得rowIndex</div><div class="line">var rowIndex = $(&quot;#demo_datagrid&quot;).datagrid(&quot;getRowIndex&quot;, rowData);</div><div class="line">---------------------------------------------------------------</div><div class="line">//根据rowIndex获得rowData</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;unselectAll&apos;);</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;selectRow&apos;, rowIndex);</div><div class="line">var rowData = $(&apos;#datagrid_id&apos;).datagrid(&apos;getSelected&apos;);</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;unselectRow&apos;, rowIndex);</div><div class="line">---------------------------------------------------------------</div><div class="line">// 刷新索引行，在行数据修改后</div><div class="line">$(&apos;#demo_datagrid&apos;).datagrid(&apos;refreshRow&apos;, rowIndex);</div><div class="line">---------------------------------------------------------------</div><div class="line">//新增行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;appendRow&apos;, &#123;&#125;);</div><div class="line">//获取新增行</div><div class="line">rowIndex = $(&apos;#datagrid_id&apos;).datagrid(&apos;getRows&apos;).length - 1;</div><div class="line">---------------------------------------------------------------</div><div class="line">//编辑索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;selectRow&apos;, rowIndex)</div><div class="line">    .datagrid(&apos;beginEdit&apos;, rowIndex);</div><div class="line">//退出编辑索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;endEdit&apos;, rowIndex);</div><div class="line">//删除索引行</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;cancelEdit&apos;, rowIndex)</div><div class="line">    .datagrid(&apos;deleteRow&apos;, rowIndex);</div><div class="line">//保存修改</div><div class="line">$(&apos;#datagrid_id&apos;).datagrid(&apos;acceptChanges&apos;);</div><div class="line">---------------------------------------------------------------</div><div class="line">//校验正在编辑的索引行</div><div class="line">var result = $(&apos;#datagrid_id&apos;).datagrid(&apos;validateRow&apos;, rowIndex);</div><div class="line">//执行form的校验</div><div class="line">var result = $(&apos;#column_form&apos;).form(&apos;validate&apos;);</div><div class="line">---------------------------------------------------------------</div><div class="line">//获得索引行的编辑器</div><div class="line">var editor = $(&apos;#datagrid_id&apos;).datagrid(&apos;getEditor&apos;, &#123;</div><div class="line">    index: rowIndex,</div><div class="line">    field: &apos;tableName&apos;</div><div class="line">&#125;);</div><div class="line">//设定“表名”不可修改</div><div class="line">$(editor.target).combobox(&#123;</div><div class="line">    readonly: true</div><div class="line">&#125;);</div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -27,8 +26,161 @@
     <entry>
       <title><![CDATA[IDEA快捷键]]></title>
       <url>/2017/09/10/IDEA-hot-key/</url>
-      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>快捷键 |效果<br>-:    |:-<br>Ctrl + Alt + H|调用树<br>Alt + Enter|自动提示错误解决方法<br>Alt + F7|查看所有引用该类/方法/变量的位置<br>Ctrl + Alt + B|查看方法（或者Ctrl + Alt + 左键）<br>Alt + Insert|添加构造类或者getter/setter<br>双击 Shift|在项目中全局搜索<br>Ctrl + Shift + N|搜索所有文件<br>Ctrl + N|搜索类<br>Shift + F6|重命名类/方法/变量<br>Ctrl + R|当前文件内替换<br>Ctrl + Shift + R|当前项目内替换<br>Ctrl + F12|显示浮动的OutLine<br>Ctrl + X|剪切当前行<br>Shift + F9|debug Tomcat<br>Alt + ↑ / ↓|上 / 下一个方法<br>Ctrl + Alt +  ← / →|返回上次编辑的位置<br>F2|跳到下一处错误<br>F3|跳到下一处查找的内容<br>Ctrl + G|跳到指定行<br>Shift + Enter|在光标所在行下起一空行<br>Ctrl + Shift + Enter|自动补全)、}、;等！<br>Ctrl + Alt + T|将选中代码surrond<br>Ctrl + O|重写方法<br>Ctrl + Shift + U|大小写转化<br>Ctrl + Shift + J|整合两行为一行<br>Ctrl + P|方法参数提示<br>Ctrl + Q|光标所在方法的声明<br>Ctrl + Shift + Backspace|上次编辑的地方<br>Ctrl + Backspace|删除一段内容<br>Alt + 7|显示当前文件的结构<br>F4| 查找变量来源（Ctrl + 左键）<br>Alt + F1|在工程目录中定位当前文件所在位置<br>Ctrl + ~|快速切换方案。最典型的就是：提交当前文件<br>Ctrl + Shift + F8|查看断点<br>Ctrl + {|跳到当前代码块的左边界（左括号位置）<br>Ctrl + }|跳到当前代码块的右边界（右括号位置）</the></p>
+      <content type="html"><![CDATA[<h4 id="IDEA-常用快捷键如下："><a href="#IDEA-常用快捷键如下：" class="headerlink" title="IDEA 常用快捷键如下："></a>IDEA 常用快捷键如下：</h4><a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th>　　　　效果　  　　　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ctrl + Alt + H</td>
+<td>调用树</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + Enter</td>
+<td>自动提示错误解决方法</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + F7</td>
+<td>查看所有引用该类/方法/变量的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Alt + B</td>
+<td>查看方法（或者Ctrl + Alt + 左键）</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + Insert</td>
+<td>添加构造类或者getter/setter</td>
+</tr>
+<tr>
+<td style="text-align:center">双击 Shift</td>
+<td>在项目中全局搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + N</td>
+<td>搜索所有文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + N</td>
+<td>搜索类</td>
+</tr>
+<tr>
+<td style="text-align:center">Shift + F6</td>
+<td>重命名类/方法/变量</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + R</td>
+<td>当前文件内替换</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + R</td>
+<td>当前项目内替换</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + F12</td>
+<td>显示浮动的OutLine</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + X</td>
+<td>剪切当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">Shift + F9</td>
+<td>debug Tomcat</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + ↑ / ↓</td>
+<td>上 / 下一个方法</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Alt +  ← / →</td>
+<td>返回上次编辑的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">F2</td>
+<td>跳到下一处错误</td>
+</tr>
+<tr>
+<td style="text-align:center">F3</td>
+<td>跳到下一处查找的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + G</td>
+<td>跳到指定行</td>
+</tr>
+<tr>
+<td style="text-align:center">Shift + Enter</td>
+<td>在光标所在行下起一空行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + Enter</td>
+<td>自动补全)、}、;等！</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Alt + T</td>
+<td>将选中代码surrond</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + O</td>
+<td>重写方法</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + U</td>
+<td>大小写转化</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + J</td>
+<td>整合两行为一行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + P</td>
+<td>方法参数提示</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Q</td>
+<td>光标所在方法的声明</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + Backspace</td>
+<td>上次编辑的地方</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Backspace</td>
+<td>删除一段内容</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + 7</td>
+<td>显示当前文件的结构</td>
+</tr>
+<tr>
+<td style="text-align:center">F4</td>
+<td>查找变量来源（Ctrl + 左键）</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + F1</td>
+<td>在工程目录中定位当前文件所在位置</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + ~</td>
+<td>快速切换方案。最典型的就是：提交当前文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + F8</td>
+<td>查看断点</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + {</td>
+<td>跳到当前代码块的左边界（左括号位置）</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + }</td>
+<td>跳到当前代码块的右边界（右括号位置）</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       
         
@@ -45,8 +197,13 @@
     <entry>
       <title><![CDATA[岳阳楼记 - 范仲淹]]></title>
       <url>/2017/09/10/poetry-Yueyang-floor-in-mind/</url>
-      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>　　庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴。乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。属予作文以记之。</excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>　　予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯；朝晖夕阴，气象万千。此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？<br>　　若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空；日星隐曜，山岳潜形；商旅不行，樯倾楫摧；薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。<br>　　至若春和景明，波澜不惊，上下天光，一碧万顷；沙鸥翔集，锦鳞游泳；岸芷汀兰，郁郁青青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。<br>　　嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲；居庙堂之高则忧其民；处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎。噫！微斯人，吾谁与归？<br> 　　时六年九月十五日。</the></p>
+      <content type="html"><![CDATA[<p>　　庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴。乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。属予作文以记之。</p>
+<a id="more"></a>
+<p>　　予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯；朝晖夕阴，气象万千。此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，览物之情，得无异乎？</p>
+<p>　　若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空；日星隐曜，山岳潜形；商旅不行，樯倾楫摧；薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。</p>
+<p>　　至若春和景明，波澜不惊，上下天光，一碧万顷；沙鸥翔集，锦鳞游泳；岸芷汀兰，郁郁青青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。</p>
+<p>　　嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲；居庙堂之高则忧其民；处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰“先天下之忧而忧，后天下之乐而乐”乎。噫！微斯人，吾谁与归？</p>
+<p> 　　时六年九月十五日。</p>
 ]]></content>
       
         <categories>
@@ -67,7 +224,11 @@
     <entry>
       <title><![CDATA[醉翁亭记 - 欧阳修]]></title>
       <url>/2017/09/10/poetry-Drunkard-pavilion-mind/</url>
-      <content type="html"><![CDATA[<p>　　环滁皆山也。其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。山行六七里，渐闻水声潺潺而泻出于两峰之间者，酿泉也。峰回路转，有亭翼然临于泉上者，醉翁亭也。作亭者谁？山之僧智仙也。名之者谁？太守自谓也。太守与客来饮于此，饮少辄醉，而年又最高，故自号曰醉翁也。醉翁之意不在酒，在乎山水之间也。山水之乐，得之心而寓之酒也。<br>　　若夫日出而林霏开，云归而岩穴暝，晦明变化者，山间之朝暮也。野芳发而幽香，佳木秀而繁阴，风霜高洁，水落而石出者，山间之四时也。朝而往，暮而归，四时之景不同，而乐亦无穷也。<br>　　至于负者歌于途，行者休于树，前者呼，后者应，伛偻提携，往来而不绝者，滁人游也。临溪而渔，溪深而鱼肥。酿泉为酒，泉香而酒洌；山肴野蔌，杂然而前陈者，太守宴也。宴酣之乐，非丝非竹，射者中，弈者胜，觥筹交错，起坐而喧哗者，众宾欢也。苍颜白发，颓然乎其间者，太守醉也。<br>　　已而夕阳在山，人影散乱，太守归而宾客从也。树林阴翳，鸣声上下，游人去而禽鸟乐也。然而禽鸟知山林之乐，而不知人之乐；人知从太守游而乐，而不知太守之乐其乐也。醉能同其乐，醒能述以文者，太守也。太守谓谁？庐陵欧阳修也。</p>
+      <content type="html"><![CDATA[<p>　　环滁皆山也。其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。山行六七里，渐闻水声潺潺而泻出于两峰之间者，酿泉也。峰回路转，有亭翼然临于泉上者，醉翁亭也。作亭者谁？山之僧智仙也。名之者谁？太守自谓也。太守与客来饮于此，饮少辄醉，而年又最高，故自号曰醉翁也。醉翁之意不在酒，在乎山水之间也。山水之乐，得之心而寓之酒也。</p>
+<a id="more"></a>
+<p>　　若夫日出而林霏开，云归而岩穴暝，晦明变化者，山间之朝暮也。野芳发而幽香，佳木秀而繁阴，风霜高洁，水落而石出者，山间之四时也。朝而往，暮而归，四时之景不同，而乐亦无穷也。</p>
+<p>　　至于负者歌于途，行者休于树，前者呼，后者应，伛偻提携，往来而不绝者，滁人游也。临溪而渔，溪深而鱼肥。酿泉为酒，泉香而酒洌；山肴野蔌，杂然而前陈者，太守宴也。宴酣之乐，非丝非竹，射者中，弈者胜，觥筹交错，起坐而喧哗者，众宾欢也。苍颜白发，颓然乎其间者，太守醉也。</p>
+<p>　　已而夕阳在山，人影散乱，太守归而宾客从也。树林阴翳，鸣声上下，游人去而禽鸟乐也。然而禽鸟知山林之乐，而不知人之乐；人知从太守游而乐，而不知太守之乐其乐也。醉能同其乐，醒能述以文者，太守也。太守谓谁？庐陵欧阳修也。</p>
 ]]></content>
       
         <categories>
@@ -88,8 +249,7 @@
     <entry>
       <title><![CDATA[短歌行 - 曹操]]></title>
       <url>/2017/09/10/poetry-short-song/</url>
-      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>对酒当歌， 人生几何！<br>譬如朝露， 去日苦多。<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>慨当以慷， 忧思难忘。<br>何以解忧？ 惟有杜康。<br>青青子衿， 悠悠我心。<br>但为君故， 沉吟至今。<br>呦呦鹿鸣， 食野之苹。<br>我有嘉宾， 鼓瑟吹笙。<br>明明如月， 何时可掇？<br>忧从中来， 不可断绝。<br>越陌度阡， 枉用相存。<br>契阔谈， 心念旧恩。<br>月明星稀， 乌鹊南飞。<br>绕树三匝， 何枝可依？<br>山不厌高， 海不厌深。<br>周公吐哺， 天下归心。</the></p>
+      <content type="html"><![CDATA[<p>对酒当歌， 人生几何！<br>譬如朝露， 去日苦多。<a id="more"></a><br>慨当以慷， 忧思难忘。<br>何以解忧？ 惟有杜康。<br>青青子衿， 悠悠我心。<br>但为君故， 沉吟至今。<br>呦呦鹿鸣， 食野之苹。<br>我有嘉宾， 鼓瑟吹笙。<br>明明如月， 何时可掇？<br>忧从中来， 不可断绝。<br>越陌度阡， 枉用相存。<br>契阔谈， 心念旧恩。<br>月明星稀， 乌鹊南飞。<br>绕树三匝， 何枝可依？<br>山不厌高， 海不厌深。<br>周公吐哺， 天下归心。</p>
 ]]></content>
       
         <categories>
@@ -110,8 +270,8 @@
     <entry>
       <title><![CDATA[送东阳马生序（节选） - 宋濂]]></title>
       <url>/2017/09/10/poetry-send-dongyang-ma-order/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<p>　　余幼时即嗜学。家贫，无从致书以观，每假借于藏书之家，手自笔录，计日以还。天大寒，砚冰坚，手指不可屈伸，弗之怠。录毕，走送之，不敢稍逾约。以是人多以书假余，余因得遍观群书。既加冠，益慕圣贤之道 ，又患无硕师、名人与游，尝趋百里外，从乡之先达执经叩问。先达德隆望尊，门人弟子填其室，未尝稍降辞色。余立侍左右，援疑质理，俯身倾耳以请；或遇其叱咄，色愈恭，礼愈至，不敢出一言以复；俟其欣悦，则又请焉。故余虽愚，卒获有所闻。<br>　　当余之从师也，负箧曳屣，行深山巨谷中，穷冬烈风，大雪深数尺，足肤皲裂而不知。至舍，四支僵劲不能动，媵人持汤沃灌，以衾拥覆，久而乃和。寓逆旅，主人日再食，无鲜肥滋味之享。同舍生皆被绮绣，戴朱缨宝饰之帽，腰白玉之环，左佩刀，右备容臭，烨然若神人；余则缊袍敝衣处其间，略无慕艳意。以中有足乐者，不知口体之奉不若人也。盖余之勤且艰若此。</p>
+      <content type="html"><![CDATA[<p>　　余幼时即嗜学。家贫，无从致书以观，每假借于藏书之家，手自笔录，计日以还。<a id="more"></a>天大寒，砚冰坚，手指不可屈伸，弗之怠。录毕，走送之，不敢稍逾约。以是人多以书假余，余因得遍观群书。既加冠，益慕圣贤之道 ，又患无硕师、名人与游，尝趋百里外，从乡之先达执经叩问。先达德隆望尊，门人弟子填其室，未尝稍降辞色。余立侍左右，援疑质理，俯身倾耳以请；或遇其叱咄，色愈恭，礼愈至，不敢出一言以复；俟其欣悦，则又请焉。故余虽愚，卒获有所闻。</p>
+<p>　　当余之从师也，负箧曳屣，行深山巨谷中，穷冬烈风，大雪深数尺，足肤皲裂而不知。至舍，四支僵劲不能动，媵人持汤沃灌，以衾拥覆，久而乃和。寓逆旅，主人日再食，无鲜肥滋味之享。同舍生皆被绮绣，戴朱缨宝饰之帽，腰白玉之环，左佩刀，右备容臭，烨然若神人；余则缊袍敝衣处其间，略无慕艳意。以中有足乐者，不知口体之奉不若人也。盖余之勤且艰若此。</p>
 ]]></content>
       
         <categories>
@@ -132,8 +292,9 @@
     <entry>
       <title><![CDATA[蜀道难 - 李白]]></title>
       <url>/2017/09/10/poetry-shu-road-difficult/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>　　噫吁嚱， 危乎高哉！ 蜀道之难， 难于上青天！ 蚕丛及鱼凫， 开国何茫然！ 尔来四万八千岁， 不与秦塞通人烟。 西当太白有鸟道， 可以横绝峨眉巅。 地崩山摧壮士死， 然后天梯石栈相钩连。 上有六龙回日之高标， 下有冲波逆折之回川。 黄鹤之飞尚不得过， 猿猱欲度愁攀援。 青泥何盘盘， 百步九折萦岩峦。 扪参历井仰胁息， 以手抚膺坐长叹。<br>　　问君西游何时还？ 畏途巉岩不可攀。 但见悲鸟号古木， 雄飞雌从绕林间。 又闻子规啼夜月， 愁空山。 蜀道之难， 难于上青天， 使人听此凋朱颜！ 连峰去天不盈尺， 枯松倒挂倚绝壁。 飞湍瀑流争喧豗， 砯崖转石万壑雷。 其险也如此， 嗟尔远道之人胡为乎来哉！<br>　　剑阁峥嵘而崔嵬， 一夫当关， 万夫莫开。 所守或匪亲， 化为狼与豺。 朝避猛虎， 夕避长蛇； 磨牙吮血， 杀人如麻。 锦城虽云乐， 不如早还家。 蜀道之难， 难于上青天， 侧身西望长咨嗟！</the></p>
+      <content type="html"><![CDATA[<p>　　噫吁嚱， 危乎高哉！ 蜀道之难， 难于上青天！<a id="more"></a> 蚕丛及鱼凫， 开国何茫然！ 尔来四万八千岁， 不与秦塞通人烟。 西当太白有鸟道， 可以横绝峨眉巅。 地崩山摧壮士死， 然后天梯石栈相钩连。 上有六龙回日之高标， 下有冲波逆折之回川。 黄鹤之飞尚不得过， 猿猱欲度愁攀援。 青泥何盘盘， 百步九折萦岩峦。 扪参历井仰胁息， 以手抚膺坐长叹。</p>
+<p>　　问君西游何时还？ 畏途巉岩不可攀。 但见悲鸟号古木， 雄飞雌从绕林间。 又闻子规啼夜月， 愁空山。 蜀道之难， 难于上青天， 使人听此凋朱颜！ 连峰去天不盈尺， 枯松倒挂倚绝壁。 飞湍瀑流争喧豗， 砯崖转石万壑雷。 其险也如此， 嗟尔远道之人胡为乎来哉！</p>
+<p>　　剑阁峥嵘而崔嵬， 一夫当关， 万夫莫开。 所守或匪亲， 化为狼与豺。 朝避猛虎， 夕避长蛇； 磨牙吮血， 杀人如麻。 锦城虽云乐， 不如早还家。 蜀道之难， 难于上青天， 侧身西望长咨嗟！</p>
 ]]></content>
       
         <categories>
@@ -154,8 +315,10 @@
     <entry>
       <title><![CDATA[前赤壁赋 - 苏轼]]></title>
       <url>/2017/09/10/poetry-former-chibi-fu/</url>
-      <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>　　壬戌之秋， 七月既望， 苏子与客泛舟游于赤壁之下。 清风徐来， 水波不兴。 举酒属客， 诵明月之诗， 歌窈窕之章。 少焉， 月出于东山之上， 徘徊于斗牛之间。 白露横江， 水光接天。 纵一苇之所如， 凌万顷之茫然。 浩浩乎如冯虚御风， 而不知其所止； 飘飘乎如遗世独立， 羽化而登仙。<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br>　　于是饮酒乐甚， 扣舷而歌之。 歌曰： “桂棹兮兰桨， 击空明兮溯流光。 渺渺兮于怀， 望美人兮天一方。” 客有吹洞萧者， 倚歌而和之， 其声呜呜然： 如怨如慕， 如泣如诉； 余音袅袅， 不绝如缕； 舞幽壑之潜蛟， 泣孤舟之嫠妇。<br>　　苏子愀然， 正襟危坐， 而问客曰： “何为其然也？” 客曰： “月明星稀， 乌鹊南飞， 此非曹孟德之诗乎？ 西望夏口， 东望武昌。 山川相缪， 郁乎苍苍； 此非孟德之困于周郎者乎？ 方其破荆州， 下江陵， 顺流而东也， 舳舻千里， 旌旗蔽空， 酾酒临江， 横槊赋诗； 固一世之雄也， 而今安在哉？ 况吾与子， 渔樵于江渚之上， 侣鱼虾而友糜鹿， 驾一叶之扁舟， 举匏樽以相属； 寄蜉蝣与天地， 渺沧海之一粟。 哀吾生之须臾， 羡长江之无穷； 挟飞仙以遨游， 抱明月而长终； 知不可乎骤得， 托遗响于悲风。”<br>　　苏子曰： “客亦知夫水与月乎？ 逝者如斯， 而未尝往也； 盈虚者如彼， 而卒莫消长也。 盖将自其变者而观之， 而天地曾不能一瞬； 自其不变者而观之， 则物于我皆无尽也。 而又何羡乎？ 且夫天地之间， 物各有主。 苟非吾之所有， 虽一毫而莫取。 惟江上之清风， 与山间之明月， 耳得之而为声， 目遇之而成色。 取之无禁， 用之不竭。 是造物者之无尽藏也， 而吾与子之所共适。”<br>　　客喜而笑， 洗盏更酌， 肴核既尽， 杯盘狼藉。 相与枕藉乎舟中， 不知东方之既白。</the></p>
+      <content type="html"><![CDATA[<p>　　壬戌之秋， 七月既望， 苏子与客泛舟游于赤壁之下。 清风徐来， 水波不兴。 举酒属客， 诵明月之诗， 歌窈窕之章。 少焉， 月出于东山之上， 徘徊于斗牛之间。 白露横江， 水光接天。 纵一苇之所如， 凌万顷之茫然。 浩浩乎如冯虚御风， 而不知其所止； 飘飘乎如遗世独立， 羽化而登仙。<br><a id="more"></a><br>　　于是饮酒乐甚， 扣舷而歌之。 歌曰： “桂棹兮兰桨， 击空明兮溯流光。 渺渺兮于怀， 望美人兮天一方。” 客有吹洞萧者， 倚歌而和之， 其声呜呜然： 如怨如慕， 如泣如诉； 余音袅袅， 不绝如缕； 舞幽壑之潜蛟， 泣孤舟之嫠妇。</p>
+<p>　　苏子愀然， 正襟危坐， 而问客曰： “何为其然也？” 客曰： “月明星稀， 乌鹊南飞， 此非曹孟德之诗乎？ 西望夏口， 东望武昌。 山川相缪， 郁乎苍苍； 此非孟德之困于周郎者乎？ 方其破荆州， 下江陵， 顺流而东也， 舳舻千里， 旌旗蔽空， 酾酒临江， 横槊赋诗； 固一世之雄也， 而今安在哉？ 况吾与子， 渔樵于江渚之上， 侣鱼虾而友糜鹿， 驾一叶之扁舟， 举匏樽以相属； 寄蜉蝣与天地， 渺沧海之一粟。 哀吾生之须臾， 羡长江之无穷； 挟飞仙以遨游， 抱明月而长终； 知不可乎骤得， 托遗响于悲风。”</p>
+<p>　　苏子曰： “客亦知夫水与月乎？ 逝者如斯， 而未尝往也； 盈虚者如彼， 而卒莫消长也。 盖将自其变者而观之， 而天地曾不能一瞬； 自其不变者而观之， 则物于我皆无尽也。 而又何羡乎？ 且夫天地之间， 物各有主。 苟非吾之所有， 虽一毫而莫取。 惟江上之清风， 与山间之明月， 耳得之而为声， 目遇之而成色。 取之无禁， 用之不竭。 是造物者之无尽藏也， 而吾与子之所共适。”</p>
+<p>　　客喜而笑， 洗盏更酌， 肴核既尽， 杯盘狼藉。 相与枕藉乎舟中， 不知东方之既白。</p>
 ]]></content>
       
         <categories>
